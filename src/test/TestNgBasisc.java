@@ -2,6 +2,7 @@ package test;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -23,7 +24,7 @@ public class TestNgBasisc {
 		driver.get("https://www.freecrm.com/");
 	}
 	
-	@Test
+	@Test(priority = 1)
 	public void verifyPageTitleTest() {
 		String ExpectedTitle = "Free CRM software for customer relationship management, sales, marketing campaigns and support.";
 		String pageTitile =  driver.getTitle();
@@ -31,6 +32,11 @@ public class TestNgBasisc {
 		Assert.assertEquals(pageTitile, ExpectedTitle);
 	}
 	
+	@Test(priority = 2)
+	public void verifyLogovisibilityTest() {
+		boolean flag = driver.findElement(By.cssSelector("img[src='https://freecrm.com/images/freecrm_logo.png']")).isDisplayed();
+		Assert.assertTrue(flag);
+	}
 
 	@AfterMethod
 	public void tearDown() {
