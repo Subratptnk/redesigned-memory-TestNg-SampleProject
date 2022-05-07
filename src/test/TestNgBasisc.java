@@ -1,5 +1,6 @@
 package test;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -25,7 +26,7 @@ public class TestNgBasisc {
 	}
 	
 	@Test(priority = 1)
-	public void verifyPageTitleTest() {
+	public void verifyPageTitleTest() throws IOException {
 		String ExpectedTitle = "Free CRM software for customer relationship management, sales, marketing campaigns and support.";
 		String pageTitile =  driver.getTitle();
 		//System.out.println("The page tittle is "+pageTitile);		
@@ -33,7 +34,7 @@ public class TestNgBasisc {
 	}
 	
 	@Test(priority = 2)
-	public void verifyLogovisibilityTest() {
+	public void verifyLogovisibilityTest() throws IOException {
 		boolean flag = driver.findElement(By.cssSelector("img[src='https://freecrm.com/images/freecrm_logo.png']")).isDisplayed();
 		Assert.assertTrue(flag);
 	}
