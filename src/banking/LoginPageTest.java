@@ -19,7 +19,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 //TestNg1234@567
@@ -27,7 +29,7 @@ public class LoginPageTest {
 	WebDriver driver;
 	
 	
-	@BeforeMethod
+	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "D:/Subrat2022/SELENIUM/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
@@ -37,11 +39,11 @@ public class LoginPageTest {
 		driver.manage().deleteAllCookies();
 		driver.get("https://parabank.parasoft.com/parabank/overview.htm");	
 		
-		login("Sanjeev1002", "Sanjeev@1001");
+		login("Sanjeev1001", "Sanjeev@1001");
 		
 	}
 	
-	@AfterMethod
+	@AfterTest
 	public void tearDown() {
 		driver.quit();
 	}
@@ -63,26 +65,27 @@ public class LoginPageTest {
 	
 	@Test
 	public void accountOverviewTest() throws InterruptedException {
-		try {
+		
+			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//b[@class='ng-binding']"))));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.findElement(By.xpath("//a[@class='ng-binding']")).click();
+			WebElement balance = driver.findElement(By.xpath("//td[@id='balance']"));
+			System.out.println(balance.getText());
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			try {
 			takeScreenshot();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 				}
-			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//b[@class='ng-binding']"))));
-			Thread.sleep(5000);
-			driver.findElement(By.xpath("//a[@class='ng-binding']")).click();
-			WebElement balance = driver.findElement(By.xpath("//td[@id='balance']"));
-			
-			Assert.assertEquals(balance.getText(), "$1111.00");
-			
-	
-	
+	    Assert.assertNotEquals(balance.getText(),null );
+
 	}	
 	@Test
 	public void accountActivityTest() {
-		WebElement available = driver.findElement(By.xpath("//td[@id='availableBalance']"));
-		Assert.assertNotEquals(available.getText(), null);
+//		WebElement available = driver.findElement(By.xpath("//td[@id='availableBalance']"));
+//		Assert.assertNotEquals(available.getText(), null);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.findElement(By.xpath("//input[@value='Go']")).click();
 		
 		WebElement date = driver.findElement(By.xpath("//tr[@class='ng-scope']//td[1]"));
