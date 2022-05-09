@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\subra\AppData\Local\Temp\testng-eclipse--1454754160\testng-customsuite.xml</span>
+                    <span>C:\Users\subra\AppData\Local\Temp\testng-eclipse-1422068028\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +104,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="booking.PetBookingE2E" class="method navigator-link" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="phptravels.HomePageTest" class="method navigator-link" hash-for-method="dashboardTest">dashboardTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="booking.PetBookingE2E" class="method navigator-link" hash-for-method="makeAppointmentTest">makeAppointmentTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="phptravels.HomePageTest" class="method navigator-link" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="phptravels.HomePageTest" class="method navigator-link" hash-for-method="signUpTest">signUpTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -127,9 +132,16 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">booking.PetBookingE2E</span>
+              <span class="class-name">phptravels.HomePageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="dashboardTest">
+                  </a> <!-- dashboardTest -->
+                  <span class="method-name">dashboardTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="loginTest">
@@ -139,9 +151,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="makeAppointmentTest">
-                  </a> <!-- makeAppointmentTest -->
-                  <span class="method-name">makeAppointmentTest</span>
+                  <a name="signUpTest">
+                  </a> <!-- signUpTest -->
+                  <span class="method-name">signUpTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,7 +161,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\subra\AppData\Local\Temp\testng-eclipse--1454754160\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\subra\AppData\Local\Temp\testng-eclipse-1422068028\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -158,7 +170,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;booking.PetBookingE2E&quot;/&gt;
+      &lt;class name=&quot;phptravels.HomePageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -198,20 +210,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginTest')
-data.setCell(0, 2, 'booking.PetBookingE2E')
-data.setCell(0, 3, 2706);
+data.setCell(0, 1, 'signUpTest')
+data.setCell(0, 2, 'phptravels.HomePageTest')
+data.setCell(0, 3, 13084);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'makeAppointmentTest')
-data.setCell(1, 2, 'booking.PetBookingE2E')
-data.setCell(1, 3, 1277);
+data.setCell(1, 1, 'loginTest')
+data.setCell(1, 2, 'phptravels.HomePageTest')
+data.setCell(1, 3, 3135);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'dashboardTest')
+data.setCell(2, 2, 'phptravels.HomePageTest')
+data.setCell(2, 3, 2038);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 18 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -237,23 +253,43 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">booking.PetBookingE2E</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
+              <div class="chronological-class-name">phptravels.HomePageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">dashboardTest</span>
+                <span class="method-start">10584 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">12627 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">12834 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">9443 ms</span>
+                <span class="method-start">22713 ms</span>
               </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">makeAppointmentTest</span>
-                <span class="method-start">12151 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-test after">
+              <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">13430 ms</span>
-              </div> <!-- configuration-test after -->
+                <span class="method-start">25848 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">26087 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">signUpTest</span>
+                <span class="method-start">35964 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">49049 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
