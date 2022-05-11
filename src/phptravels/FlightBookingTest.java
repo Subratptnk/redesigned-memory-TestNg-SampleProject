@@ -59,18 +59,43 @@ public class FlightBookingTest {
 		Select flightypeSelect = new Select(flighType);
 		flightypeSelect.selectByIndex(3);
 		
+		scroll(100);
+		
 		WebElement sourcePlace = driver.findElement(By.xpath("//input[@placeholder='Flying From']"));
 		sourcePlace.sendKeys("Pune");
-		List<WebElement> sourcePlaceList = driver.findElements(By.cssSelector("div[class='autocomplete-results troll intro in'] div[class*='autocomplete-result']"));
-		for(WebElement option: sourcePlaceList) {
-			if(option.getText().equalsIgnoreCase("Pune, India")) {
+		List<WebElement> sourcePlaceList = driver.findElements(By.cssSelector("div[class='autocomplete-result'] strong"));
+		for(WebElement option: sourcePlaceList) {	
+			System.out.println(option.getText());
+			String places = option.getText();
+			if(places.equalsIgnoreCase("Pune")) {
 				option.click();
 				break;
 			}
 		}
 		
+		WebElement destPlace = driver.findElement(By.xpath("//input[@id='autocomplete2']"));
+		destPlace.sendKeys("BLR");
+		List<WebElement> destPlaceList = driver.findElements(By.cssSelector("div[class='autocomplete-result'] strong"));
+		for(WebElement option:destPlaceList) {
+			System.out.println(option.getText());
+			if(option.getText().equals("Bangalore")) {
+				option.click();
+				
+				break;
+			}
+		}
 		
+		
+		driver.findElement(By.cssSelector("input[class='depart form-control']")).click();
+		driver.findElement(By.xpath("//tr[position()=5]//td[text()='26']")).click();
+		takeScreenshot(0,"FinalPage");
+		driver.findElement(By.xpath("//i[@class='mdi mdi-search']")).click();
+		takeScreenshot(0, "Done");
 	}
 	
+	@Test
+	public void loginTest() {
+		
+	}
 	
 }
