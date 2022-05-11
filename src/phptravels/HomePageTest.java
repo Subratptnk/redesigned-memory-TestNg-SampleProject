@@ -53,9 +53,9 @@ WebDriver driver;
 		js.executeScript("window.scroll(0,"+x+")");
 	}
 	
-	@Test
+	@Test(priority = 1)
 	public void signUpTest() throws IOException, InterruptedException {
-		WebElement signUpBtn = driver.findElement(By.xpath("//a[@class='btn btn-outline-primary btn-block form-group effect ladda-sm ladda-button waves-effect']"));
+		WebElement signUpBtn = driver.findElement(By.xpath("//a[@class='theme-btn theme-btn-small waves-effect']"));
 		signUpBtn.click();
 		takeScreenshot(1,"SignUpPage");
 		
@@ -75,7 +75,7 @@ WebDriver driver;
 		firstName.sendKeys("Rajat");
 		lastName.sendKeys("Rawal");
 		phone.sendKeys("7709821878");
-		email.sendKeys("rajat.rawal1@sinecos.com");
+		email.sendKeys("rajat.rawal5@sinecos.com");
 		password.sendKeys("Rajat@sineCos");
 		scroll(500);
 		takeScreenshot(2, "Before Submit Button is clicked");
@@ -84,7 +84,7 @@ WebDriver driver;
 		
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void loginTest() throws IOException, InterruptedException {
 		scroll(250);
 		WebElement email = driver.findElement(By.xpath("//input[@placeholder='Email']"));
@@ -93,13 +93,13 @@ WebDriver driver;
 		WebElement login = driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg btn-block effect ladda-button waves-effect']"));
 		
 		takeScreenshot(4, "Before Login");
-		email.sendKeys("rajat.rawal@sinecos.com");
+		email.sendKeys("rajat.rawal5@sinecos.com");
 		password.sendKeys("Rajat@sineCos");
 		saveMe.click();
 		login.click();
 		takeScreenshot(5, "After Login");
 	}
-	@Test
+	@Test(priority = 3)
 	public void dashboardTest() throws IOException, InterruptedException {
 		driver.findElement(By.xpath("//a[normalize-space()='Home']")).click();
 	}

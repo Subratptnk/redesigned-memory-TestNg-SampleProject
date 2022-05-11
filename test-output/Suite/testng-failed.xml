@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="practice Test(failed)">
     <classes>
-      <class name="banking.LoginPageTest">
+      <class name="phptravels.FlightBookingTest">
         <methods>
-          <include name="clickOnDemoBank"/>
           <include name="tearDown"/>
+          <include name="seachFlightTest"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- banking.LoginPageTest -->
+      </class> <!-- phptravels.FlightBookingTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- practice Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
