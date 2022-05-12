@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-11T09:32:48 IST" name="Default suite" finished-at="2022-05-11T09:33:07 IST" duration-ms="18550">
+  <suite started-at="2022-05-12T08:25:47 IST" name="Default suite" finished-at="2022-05-12T08:26:00 IST" duration-ms="13448">
     <groups>
     </groups>
-    <test started-at="2022-05-11T09:32:48 IST" name="Default test" finished-at="2022-05-11T09:33:07 IST" duration-ms="18550">
-      <class name="phptravels.FlightBookingTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:phptravels.FlightBookingTest@3ce1e309]" started-at="2022-05-11T09:32:48 IST" name="setUp" finished-at="2022-05-11T09:32:55 IST" duration-ms="6274" status="PASS">
+    <test started-at="2022-05-12T08:25:47 IST" name="Default test" finished-at="2022-05-12T08:26:00 IST" duration-ms="13448">
+      <class name="jiomart.HomePageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jiomart.HomePageTest@158da8e]" started-at="2022-05-12T08:25:47 IST" name="setUp" finished-at="2022-05-12T08:25:56 IST" duration-ms="9933" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="seachFlightTest()[pri:0, instance:phptravels.FlightBookingTest@3ce1e309]" started-at="2022-05-11T09:32:55 IST" name="seachFlightTest" finished-at="2022-05-11T09:33:06 IST" duration-ms="11858" status="PASS">
+        <test-method signature="addFruitsToCart()[pri:0, instance:jiomart.HomePageTest@158da8e]" started-at="2022-05-12T08:25:56 IST" name="addFruitsToCart" finished-at="2022-05-12T08:26:00 IST" duration-ms="3167" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- seachFlightTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:phptravels.FlightBookingTest@3ce1e309]" started-at="2022-05-11T09:33:06 IST" name="tearDown" finished-at="2022-05-11T09:33:07 IST" duration-ms="376" status="PASS">
+        </test-method> <!-- addFruitsToCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:jiomart.HomePageTest@158da8e]" started-at="2022-05-12T08:26:00 IST" name="tearDown" finished-at="2022-05-12T08:26:00 IST" duration-ms="318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- phptravels.FlightBookingTest -->
+      </class> <!-- jiomart.HomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
