@@ -32,7 +32,7 @@ public class HomePageTest {
 			
 	}
 	
-	@AfterMethod
+	//@AfterMethod
 	public void tearDown() {
 		driver.quit();
 	}
@@ -108,9 +108,10 @@ public class HomePageTest {
 		int j = 0;
 		String[] fruits = {"Apple","Banana","Dates"};
 		
-		List<WebElement> fruitList = driver.findElements(By.xpath("//div[@class='cat-item viewed']//span[@class='clsgetname']"));
+		List<WebElement> fruitList = driver.findElements(By.xpath("//div[@class='white-bg box-padding']//a"));
 		System.out.println(fruitList.size());
-		scroll(500); //Need to implement from here
+		scroll(500);   //solved
+	
 		for(int i=0;i<fruitList.size();i++) {
 			System.out.println(fruitList.get(i).getText());
 			
@@ -132,7 +133,7 @@ public class HomePageTest {
 			
 			
 		}
-		
+
 		
 	}
 }

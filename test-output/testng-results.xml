@@ -2,23 +2,19 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-12T08:25:47 IST" name="Default suite" finished-at="2022-05-12T08:26:00 IST" duration-ms="13448">
+  <suite started-at="2022-05-16T00:01:06 IST" name="Default suite" finished-at="2022-05-16T00:01:18 IST" duration-ms="12717">
     <groups>
     </groups>
-    <test started-at="2022-05-12T08:25:47 IST" name="Default test" finished-at="2022-05-12T08:26:00 IST" duration-ms="13448">
+    <test started-at="2022-05-16T00:01:06 IST" name="Default test" finished-at="2022-05-16T00:01:18 IST" duration-ms="12717">
       <class name="jiomart.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:jiomart.HomePageTest@158da8e]" started-at="2022-05-12T08:25:47 IST" name="setUp" finished-at="2022-05-12T08:25:56 IST" duration-ms="9933" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jiomart.HomePageTest@3ce1e309]" started-at="2022-05-16T00:01:06 IST" name="setUp" finished-at="2022-05-16T00:01:13 IST" duration-ms="7583" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addFruitsToCart()[pri:0, instance:jiomart.HomePageTest@158da8e]" started-at="2022-05-12T08:25:56 IST" name="addFruitsToCart" finished-at="2022-05-12T08:26:00 IST" duration-ms="3167" status="PASS">
+        <test-method signature="addFruitsToCart()[pri:0, instance:jiomart.HomePageTest@3ce1e309]" started-at="2022-05-16T00:01:13 IST" name="addFruitsToCart" finished-at="2022-05-16T00:01:18 IST" duration-ms="5099" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addFruitsToCart -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:jiomart.HomePageTest@158da8e]" started-at="2022-05-12T08:26:00 IST" name="tearDown" finished-at="2022-05-12T08:26:00 IST" duration-ms="318" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- jiomart.HomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

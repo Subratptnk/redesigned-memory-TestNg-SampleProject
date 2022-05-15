@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="practice Test(failed)">
     <classes>
-      <class name="phptravels.FlightBookingTest">
+      <class name="jiomart.HomePageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="seachFlightTest"/>
           <include name="setUp"/>
+          <include name="changeDeliverAddressTest"/>
         </methods>
-      </class> <!-- phptravels.FlightBookingTest -->
+      </class> <!-- jiomart.HomePageTest -->
     </classes>
   </test> <!-- practice Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
