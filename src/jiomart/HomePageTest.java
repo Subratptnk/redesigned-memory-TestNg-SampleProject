@@ -15,12 +15,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class HomePageTest {
 	WebDriver driver;
-	@BeforeMethod
+	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "D:/Subrat2022/SELENIUM/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
@@ -32,7 +34,7 @@ public class HomePageTest {
 			
 	}
 	
-	//@AfterMethod
+	@AfterTest
 	public void tearDown() {
 		driver.quit();
 	}
@@ -53,7 +55,7 @@ public class HomePageTest {
 	/*
 	 * Test Case - 1 : Change the delivery address to 751030
 	 */
-	@Test(enabled = false)
+	@Test(priority = 1)
 	public void changeDeliverAddressTest() throws IOException {
 		WebElement deliversTo= driver.findElement(By.xpath("//li[@id='pincode_section']"));
 		deliversTo.click();
@@ -67,7 +69,7 @@ public class HomePageTest {
 	/*
 	 * Test case - 2: Click on groceries , go to atta, flour section, add 5kg ashirward aata to cart.. 
 	 */
-	@Test(enabled = false)
+	@Test(priority = 2)
 	public void addAttaFromGroceries() throws IOException, InterruptedException {
 		WebElement groceries = driver.findElement(By.cssSelector("#nav_link_2"));
 		groceries.click();
@@ -94,8 +96,9 @@ public class HomePageTest {
 	/*
 	 * Test Case - 3 : Add apple,banana,dates into cart from fruits and vegitable section
 	 */
-	@Test
+	@Test(priority = 3)
 	public void addFruitsToCart() throws InterruptedException, IOException {
+
 		
 		WebElement groceries = driver.findElement(By.cssSelector("#nav_link_2"));
 		groceries.click();
@@ -110,6 +113,7 @@ public class HomePageTest {
 		
 		List<WebElement> fruitList = driver.findElements(By.xpath("//div[@class='white-bg box-padding']//a"));
 		System.out.println(fruitList.size());
+		takeScreenshot(1, "fruitss");
 		scroll(500);   //solved
 	
 		for(int i=0;i<fruitList.size();i++) {
@@ -124,7 +128,7 @@ public class HomePageTest {
 			if(fruitNeeded.contains(formattedName)) {
 				j++;
 				driver.findElements(By.xpath("//button[contains(@title,'ADD TO CART')]")).get(i).click();
-				
+				takeScreenshot(2, formattedName);
 				System.out.println(formattedName + " --> Clicked");
 				if(j==fruits.length) {
 					break;
@@ -136,4 +140,18 @@ public class HomePageTest {
 
 		
 	}
+	
+	@Test(priority = 4)
+	public void addtoCartTest() throws IOException {
+		WebElement addtoCartBtn = driver.findElement(By.xpath("//a[@class='cart_text']"));
+		addtoCartBtn.click();
+		String amt = driver.findElement(By.xpath("//span[@id='cart_netpay_amt1']")).getText();
+		takeScreenshot(0, "Final SS");
+		System.out.println("Amount to be paid is: "+amt);
+	}
+	
+	
+	
 }
+
+
