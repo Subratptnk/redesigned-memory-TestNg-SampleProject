@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="jiomart.HomePageTest">
+      <class name="trainbooking.RailyatriHomePage">
         <methods>
-          <include name="tearDown"/>
+          <include name="selectTrain"/>
           <include name="setUp"/>
-          <include name="addFruitsToCart"/>
         </methods>
-      </class> <!-- jiomart.HomePageTest -->
+      </class> <!-- trainbooking.RailyatriHomePage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

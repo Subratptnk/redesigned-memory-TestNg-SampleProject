@@ -20,6 +20,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.opentelemetry.exporter.logging.SystemOutLogExporter;
+
 public class HomePageTest {
 	WebDriver driver;
 	@BeforeTest
@@ -55,7 +57,7 @@ public class HomePageTest {
 	/*
 	 * Test Case - 1 : Change the delivery address to 751030
 	 */
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void changeDeliverAddressTest() throws IOException {
 		WebElement deliversTo= driver.findElement(By.xpath("//li[@id='pincode_section']"));
 		deliversTo.click();
@@ -69,7 +71,7 @@ public class HomePageTest {
 	/*
 	 * Test case - 2: Click on groceries , go to atta, flour section, add 5kg ashirward aata to cart.. 
 	 */
-	@Test(priority = 2)
+	@Test(enabled = false)
 	public void addAttaFromGroceries() throws IOException, InterruptedException {
 		WebElement groceries = driver.findElement(By.cssSelector("#nav_link_2"));
 		groceries.click();
@@ -102,24 +104,24 @@ public class HomePageTest {
 		
 		WebElement groceries = driver.findElement(By.cssSelector("#nav_link_2"));
 		groceries.click();
-		scroll(50);
+		scroll(500);
 		takeScreenshot(0, "fruits");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.findElement(By.xpath("//a[@href='javascript:void(0)'][text()='Fruits & Vegetables']")).click();
+		driver.findElement(By.xpath("//a[@class='cat-submenu '][normalize-space()='Fruits & Vegetables']")).click();
 		driver.findElement(By.xpath("//a[normalize-space()='Fresh Fruits']")).click();
 		
 		int j = 0;
-		String[] fruits = {"Apple","Banana","Dates"};
-		
-		List<WebElement> fruitList = driver.findElements(By.xpath("//div[@class='white-bg box-padding']//a"));
-		System.out.println(fruitList.size());
+		String[] fruits = {"Orange","Pineapple","Dates"};
+		System.out.println("Test1");
+		List<WebElement> fruitLists = driver.findElements(By.cssSelector("div[class='cat-item viewed'] span[class='clsgetname']"));
+		System.out.println(fruitLists.size());
 		takeScreenshot(1, "fruitss");
-		scroll(500);   //solved
+		scroll(1000);   //solved
 	
-		for(int i=0;i<fruitList.size();i++) {
-			System.out.println(fruitList.get(i).getText());
+		for(int i=0;i<fruitLists.size();i++) {
+			System.out.println(fruitLists.get(i).getText());
 			
-			String name[] = fruitList.get(i).getText().split(" ");
+			String name[] = fruitLists.get(i).getText().split(" ");
 			String formattedName = name[0].trim();
 			System.out.println("----name: "+name[0].trim());
 			
@@ -141,15 +143,26 @@ public class HomePageTest {
 		
 	}
 	
-	@Test(priority = 4)
+	@Test(enabled = false)
 	public void addtoCartTest() throws IOException {
-		WebElement addtoCartBtn = driver.findElement(By.xpath("//a[@class='cart_text']"));
+		WebElement addtoCartBtn = driver.findElement(By.cssSelector("a[class='cart_text']"));;
 		addtoCartBtn.click();
 		String amt = driver.findElement(By.xpath("//span[@id='cart_netpay_amt1']")).getText();
 		takeScreenshot(0, "Final SS");
 		System.out.println("Amount to be paid is: "+amt);
 	}
 	
+	@Test(enabled = false)
+	public void verifyCartTest() {
+
+		WebElement cartButton = driver.findElement(By.cssSelector("a[class='cart_text']"));
+		cartButton.click();
+		List<WebElement> listOfProduct = driver.findElements(By.cssSelector("div[class='product-itemdetails row'] div[class = 'product-item-name pl-0'] a"));
+		listOfProduct.forEach(s->System.out.println(s.getText()));
+		
+		
+		
+	}
 	
 	
 }
